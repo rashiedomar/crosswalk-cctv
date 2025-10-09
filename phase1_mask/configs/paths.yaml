@@ -1,0 +1,4 @@
+data_root: /mnt/nvme/crosswalk
+cctv_frames: ${data_root}/cctv/frames
+cctv_labels: ${data_root}/cctv/labels/crosswalk_masks.jsonl
+runs_root:  ${data_root}/runs

@@ -1,0 +1,7 @@
+data/
+runs/
+*.pt
+*.ckpt
+*.onnx
+*.npz
+.DS_Store
