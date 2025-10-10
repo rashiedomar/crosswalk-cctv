@@ -1,6 +1,8 @@
 # Adaptive Crosswalk Timing System for Elderly Pedestrians
-
-> **Research Project** - Crosswalk Detection and Timing Optimization using Computer Vision
+![Research Status](https://img.shields.io/badge/Status-In%20Progress-yellow.svg)
+![Phase](https://img.shields.io/badge/Phase-1%20Stage%202-blue.svg)
+![Master's Thesis](https://img.shields.io/badge/Type-Master's%20Thesis-purple.svg)
+![License](https://img.shields.io/badge/License-Academic-green.svg)> **Research Project** - Crosswalk Detection and Timing Optimization using Computer Vision
 
 ## 🎯 Project Overview
 
