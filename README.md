@@ -90,9 +90,6 @@ Clear visualization of performance difference between FPV (car camera) and overh
 **Worst CCTV Predictions:**
 ![Worst Predictions](outputs/stage1_test_on_cctv/worst_predictions.png)
 
-**Random Samples:**
-![Random Samples](outputs/stage1_test_on_cctv/random_samples.png)
-
 ### Specific Case Analysis
 ![Specific Frame Analysis](outputs/stage1_test_on_cctv/specific_frame_8_frame000405.png)
 
