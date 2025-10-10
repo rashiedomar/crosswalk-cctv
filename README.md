@@ -48,6 +48,12 @@ Train a crosswalk segmentation model on front-view pedestrian (FPV) data and tes
 
 ## 📈 Training Performance
 
+### Training Dataset Samples
+![Training Dataset](training dataset.png)
+
+Examples from the FPV crosswalk dataset used for training. Each sample includes the original image, ground truth mask, and overlay visualization.
+
+### Training Progress
 ![Training History](outputs/stage1_fpv/training_history.png)
 
 **Training Details:**
@@ -56,6 +62,11 @@ Train a crosswalk segmentation model on front-view pedestrian (FPV) data and tes
 - Training epochs: 30
 - Best performance: Epoch 20-25
 - Final validation IoU: 93.05%
+
+### Model Predictions on FPV Test Set
+![Model Predictions](outputs/stage1_test_on_cctv/model predictions.png)
+
+The model achieves excellent segmentation on FPV (front-view) images, accurately predicting crosswalk masks with 93% IoU.
 
 ---
 
@@ -258,9 +269,9 @@ Validate adapted model on larger CCTV test sets across diverse conditions.
 ```bibtex
 @mastersthesis{omar2025crosswalk,
   title={Adaptive Crosswalk Timing System for Elderly Pedestrians using Geometric Domain Adaptation},
-  author={Abdirashid Omar},
+  author={Omar Abdirashid},
   year={2025},
-  school={Kookmin University},
+  school={[Your University]},
   type={Master's Thesis},
   advisor={Prof. Jonghyuk Park}
 }
@@ -270,7 +281,7 @@ Validate adapted model on larger CCTV test sets across diverse conditions.
 
 ## 📧 Contact
 
-**Researcher**: Omar Rashied  
+**Researcher**: Omar Abdirashid 
 **GitHub**: [@rashiedomar](https://github.com/rashiedomar)  
 **Project**: Graduation Research - Adaptive Crosswalk System
 
