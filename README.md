@@ -1,6 +1,6 @@
 # Adaptive Crosswalk Timing System for Elderly Pedestrians
 
-> **Graduation Research Project** - Crosswalk Detection and Timing Optimization using Computer Vision
+> **Research Project** - Crosswalk Detection and Timing Optimization using Computer Vision
 
 ## 🎯 Project Overview
 
@@ -49,7 +49,7 @@ Train a crosswalk segmentation model on front-view pedestrian (FPV) data and tes
 ## 📈 Training Performance
 
 ### Training Dataset Samples
-![Training Dataset](training dataset.png)
+![Training Dataset](outputs/stage1_test_on_cctv/training_dataset.png)
 
 Examples from the FPV crosswalk dataset used for training. Each sample includes the original image, ground truth mask, and overlay visualization.
 
@@ -64,7 +64,7 @@ Examples from the FPV crosswalk dataset used for training. Each sample includes 
 - Final validation IoU: 93.05%
 
 ### Model Predictions on FPV Test Set
-![Model Predictions](outputs/stage1_test_on_cctv/model predictions.png)
+![Model Predictions](outputs/stage1_test_on_cctv/model_predictions.png)
 
 The model achieves excellent segmentation on FPV (front-view) images, accurately predicting crosswalk masks with 93% IoU.
 
@@ -275,15 +275,16 @@ Validate adapted model on larger CCTV test sets across diverse conditions.
   type={Master's Thesis},
   advisor={Prof. Jonghyuk Park}
 }
+
 ```
 
 ---
 
 ## 📧 Contact
 
-**Researcher**: Omar Abdirashid 
+**Researcher**: Omar Abdirashid  
 **GitHub**: [@rashiedomar](https://github.com/rashiedomar)  
-**Project**: Graduation Research - Adaptive Crosswalk System
+**Project**: Research - Adaptive Crosswalk System
 
 ---
 
