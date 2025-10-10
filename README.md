@@ -268,7 +268,7 @@ Validate adapted model on larger CCTV test sets across diverse conditions.
   title={Adaptive Crosswalk Timing System for Elderly Pedestrians using Geometric Domain Adaptation},
   author={Omar Abdirashid},
   year={2025},
-  school={[Your University]},
+  school={Kookmin University},
   type={Master's Thesis},
   advisor={Prof. Jonghyuk Park}
 }
