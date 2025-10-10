@@ -1,0 +1,9 @@
+{
+  "num_cctv_frames": 175,
+  "mean_confidence": 0.04381113499403,
+  "std_confidence": 0.11829324066638947,
+  "night_frames": 104,
+  "day_frames": 71,
+  "night_mean_conf": 0.001569106592796743,
+  "day_mean_conf": 0.10568676888942719
+}

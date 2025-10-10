@@ -5,3 +5,6 @@ runs/
 *.onnx
 *.npz
 .DS_Store
+*.pth
+outputs/stage1_fpv/checkpoint_*.pth
+outputs/stage1_fpv/best_model.pth
