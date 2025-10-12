@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Crosswalk System - Phase 1 Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 60px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #2c3e50;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .header .subtitle {
+            font-size: 1.3em;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+        
+        .header .meta {
+            font-size: 0.95em;
+            color: #95a5a6;
+        }
+        
+        .executive-summary {
+            background: #ecf0f1;
+            padding: 25px;
+            border-left: 4px solid #3498db;
+            margin: 30px 0;
+        }
+        
+        .executive-summary h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin: 40px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        h3 {
+            color: #34495e;
+            font-size: 1.4em;
+            margin: 30px 0 15px 0;
+        }
+        
+        h4 {
+            color: #555;
+            font-size: 1.1em;
+            margin: 20px 0 10px 0;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .key-finding {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .key-finding strong {
+            color: #856404;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .data-table th {
+            background: #3498db;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .data-table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .data-table tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .metric-card {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            min-width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .metric-card .value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .metric-card .label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        .metrics-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .phase-box {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .phase-box h4 {
+            color: #3498db;
+            margin-top: 0;
+        }
+        
+        ul, ol {
+            margin: 15px 0 15px 30px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .challenge-box {
+            background: #fee;
+            border-left: 4px solid #e74c3c;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .solution-box {
+            background: #efe;
+            border-left: 4px solid #27ae60;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .conclusion {
+            background: #e8f5e9;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+        
+        .conclusion h2 {
+            color: #27ae60;
+            border-bottom: 2px solid #27ae60;
+        }
+        
+        .image-placeholder {
+            background: #ecf0f1;
+            border: 2px dashed #95a5a6;
+            padding: 40px;
+            text-align: center;
+            margin: 20px 0;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Adaptive Crosswalk System</h1>
+            <div class="subtitle">Phase 1: Visual Perception & Domain Adaptation</div>
+            <div class="subtitle" style="font-size: 1.1em; margin-top: 10px;">Research Report - Stage 1 Results</div>
+            <div class="meta">Research Project | Computer Vision & Smart City Applications</div>
+        </div>
+
+        <div class="executive-summary">
+            <h2>Executive Summary</h2>
+            <p>
+                This report presents the results of Phase 1, Stage 1 of the Adaptive Crosswalk System project, which aims to develop an intelligent traffic signal control system that adapts to real-time pedestrian behavior. The primary objective of Phase 1 is to build a robust vision model capable of accurately segmenting crosswalks from CCTV overhead camera views.
+            </p>
+            <p>
+                <strong>Key Achievement:</strong> We successfully trained a U-Net segmentation model on First-Person View (FPV) crosswalk data, achieving an impressive 93.0% IoU on the test set. However, cross-domain evaluation on real CCTV footage from Korean intersections revealed significant performance degradation (mean confidence: 0.044), highlighting the critical need for domain adaptation techniques in Stage 2.
+            </p>
+            <p>
+                <strong>Impact:</strong> This research validates our baseline approach and provides empirical evidence for the domain gap between FPV and CCTV viewpoints, paving the way for geometric self-supervision and fine-tuning strategies in subsequent stages.
+            </p>
+        </div>
+
+        <h2>1. Research Context & Motivation</h2>
+        
+        <h3>1.1 Overall Research Phases</h3>
+        <p>
+            The Adaptive Crosswalk System is structured as a three-phase research initiative, each building upon the previous phase's achievements:
+        </p>
+
+        <div class="phase-box">
+            <h4>Phase 1 — Visual Perception & Domain Adaptation</h4>
+            <p>Build a vision model that can accurately segment crosswalks from CCTV (overhead view). This phase addresses the fundamental computer vision challenge of detecting crosswalk regions under varying viewpoints, lighting conditions, and environmental factors.</p>
+        </div>
+
+        <div class="phase-box">
+            <h4>Phase 2 — Pedestrian Behavior Understanding</h4>
+            <p>Track pedestrians within the crosswalk and estimate their walking speed, direction, and time to clear. This phase will leverage the crosswalk segmentation from Phase 1 to focus behavioral analysis within the relevant region of interest.</p>
+        </div>
+
+        <div class="phase-box">
+            <h4>Phase 3 — Adaptive Signal Control & Safety Evaluation</h4>
+            <p>Integrate perception and behavior data into a smart controller that extends green time when needed. The final phase will test the complete system in simulation or at a real intersection, measuring safety improvements and traffic flow efficiency.</p>
+        </div>
+
+        <h3>1.2 The Camera Viewpoint Challenge</h3>
+        <p>
+            A critical challenge in crosswalk detection for traffic management systems is the significant difference between available training data and real-world deployment scenarios:
+        </p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>View Type</th>
+                    <th>Description</th>
+                    <th>Example Use</th>
+                    <th>Label Availability</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>FPV (First-Person View)</strong></td>
+                    <td>Camera mounted at car or pedestrian eye-level, looking forward along the road. Crosswalk appears horizontally across the image with clear stripes.</td>
+                    <td>Dashcam datasets, autonomous driving research (KITTI, BDD100K, Cityscapes)</td>
+                    <td style="color: #27ae60; font-weight: bold;">Many public datasets with labeled crosswalk masks</td>
+                </tr>
+                <tr>
+                    <td><strong>CCTV (Overhead View)</strong></td>
+                    <td>Camera mounted on poles or traffic lights, looking downward at ~30–90°. Crosswalk appears compressed or trapezoidal.</td>
+                    <td>Smart-city traffic monitoring, intersection control</td>
+                    <td style="color: #e74c3c; font-weight: bold;">Very few or no publicly labeled crosswalk datasets</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="key-finding">
+            <strong>Research Gap:</strong> While abundant labeled data exists for forward-facing vehicle cameras, CCTV overhead views—which are essential for traffic signal control—have virtually no publicly available labeled datasets. This necessitates domain adaptation techniques to transfer knowledge from FPV to CCTV domains.
+        </div>
+
+        <h2>2. Methodology</h2>
+
+        <h3>2.1 Dataset Construction</h3>
+
+        <h4>Dataset A: FPV Crosswalk Training Data</h4>
+        <p>
+            To train our baseline model, we assembled a comprehensive dataset combining real-world and synthetic data:
+        </p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Count</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Real-world</strong></td>
+                    <td>Dashcam images: Sunny (120), Cloudy (60), Rainy (60), Night (60)</td>
+                    <td>300</td>
+                    <td>Public FPV-Crosswalk2025 dataset</td>
+                </tr>
+                <tr>
+                    <td><strong>Synthetic</strong></td>
+                    <td>Auto-generated labeled scenes</td>
+                    <td>3,000</td>
+                    <td>Expands visual variety and augments rare conditions</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td colspan="2"><strong>3,300 image-mask pairs</strong></td>
+                    <td>Balanced across weather and lighting conditions</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            The dataset was strategically designed to include diverse weather and lighting conditions, ensuring robust model performance across environmental variations. The synthetic data component addressed the class imbalance inherent in real-world dashcam footage, particularly for challenging scenarios like rainy and night conditions.
+        </p>
+
+        <h4>Dataset B: Naver CCTV Evaluation Set</h4>
+        <p>
+            To evaluate domain generalization, we collected real CCTV footage from Korean intersections:
+        </p>
+
+        <ul>
+            <li><strong>Source:</strong> Recorded directly from Naver Map Street CCTV feeds of real Korean intersections</li>
+            <li><strong>Collection Method:</strong> 8 videos × 30 seconds each, sampled at 1 fps, yielding 175 frames total</li>
+            <li><strong>Lighting Distribution:</strong> Day frames: 46 (26.3%), Night frames: 129 (73.7%)</li>
+            <li><strong>Purpose:</strong> Test how well the FPV-trained model generalizes to overhead CCTV views without labels</li>
+            <li><strong>Characteristics:</strong> Larger viewpoint change and lower brightness present a challenging domain shift</li>
+        </ul>
+
+        <div class="key-finding">
+            <strong>Dataset Design Rationale:</strong> The predominance of night frames (73.7%) in our CCTV evaluation set reflects real-world smart city monitoring scenarios, where nighttime pedestrian safety is particularly critical and detection is most challenging.
+        </div>
+
+        <h3>2.2 Model Architecture & Training Configuration</h3>
+
+        <p>
+            We employed U-Net, a proven architecture for semantic segmentation tasks, with the following specifications:
+        </p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>Configuration</th>
+                    <th>Rationale</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Model</strong></td>
+                    <td>U-Net (31M parameters)</td>
+                    <td>Encoder-decoder architecture with skip connections for precise localization</td>
+                </tr>
+                <tr>
+                    <td><strong>Input/Output</strong></td>
+                    <td>512 × 512 RGB → binary mask</td>
+                    <td>Square resolution balances computational efficiency with detail preservation</td>
+                </tr>
+                <tr>
+                    <td><strong>Optimizer</strong></td>
+                    <td>Adam, learning rate = 1e-4</td>
+                    <td>Adaptive learning rates facilitate stable convergence</td>
+                </tr>
+                <tr>
+                    <td><strong>Loss Function</strong></td>
+                    <td>BCE + Dice Loss</td>
+                    <td>Combined loss addresses class imbalance and encourages spatial overlap</td>
+                </tr>
+                <tr>
+                    <td><strong>Batch Size/Epochs</strong></td>
+                    <td>8 / 30</td>
+                    <td>Sufficient batch diversity while respecting GPU memory constraints</td>
+                </tr>
+                <tr>
+                    <td><strong>Hardware</strong></td>
+                    <td>GPU (2h training)</td>
+                    <td>Efficient training time enables rapid iteration</td>
+                </tr>
+                <tr>
+                    <td><strong>Data Augmentation</strong></td>
+                    <td>Resize, normalize, flip, color jitter</td>
+                    <td>Enhances model robustness to geometric and photometric variations</td>
+                </tr>
+                <tr>
+                    <td><strong>Dataset Split</strong></td>
+                    <td>Train: 80%, Val: 10%, Test: 10%</td>
+                    <td>Standard split with held-out test set for unbiased evaluation</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Loss Function Design</h4>
+        <p>
+            Our hybrid loss function combines Binary Cross-Entropy (BCE) and Dice Loss to leverage complementary strengths:
+        </p>
+        <ul>
+            <li><strong>BCE Loss:</strong> Provides pixel-wise classification supervision, maintaining sensitivity to individual pixel predictions</li>
+            <li><strong>Dice Loss:</strong> Directly optimizes for IoU-like metrics, particularly effective for handling the foreground-background class imbalance inherent in crosswalk segmentation</li>
+        </ul>
+
+        <h2>3. Results & Analysis</h2>
+
+        <h3>3.1 Performance on FPV Test Set</h3>
+
+        <p>
+            Our model achieved strong performance on the held-out FPV test set, demonstrating effective learning of crosswalk features from forward-facing camera perspectives:
+        </p>
+
+        <div class="metrics-container">
+            <div class="metric-card">
+                <div class="label">Training IoU</div>
+                <div class="value">95.4%</div>
+                <div class="label">Convergence Quality</div>
+            </div>
+            <div class="metric-card">
+                <div class="label">Validation IoU</div>
+                <div class="value">92.4%</div>
+                <div class="label">Best Checkpoint</div>
+            </div>
+            <div class="metric-card">
+                <div class="label">Test IoU</div>
+                <div class="value">93.0%</div>
+                <div class="label">Final Performance</div>
+            </div>
+        </div>
+
+        <div class="key-finding">
+            <strong>Performance Analysis:</strong> The minimal gap between training (95.4%) and test (93.0%) IoU indicates excellent generalization within the FPV domain. The model successfully handles diverse weather conditions including rain and night scenarios, producing sharp zebra-crossing boundaries with minimal artifacts.
+        </div>
+
+        <h4>Training Dynamics</h4>
+        <p>
+            Analysis of the training curves reveals healthy learning dynamics:
+        </p>
+        <ul>
+            <li><strong>Loss Convergence:</strong> Both training and validation loss decreased smoothly, with validation loss stabilizing around epoch 10-15, indicating effective learning without overfitting</li>
+            <li><strong>IoU Progression:</strong> Training IoU reached 95% by epoch 5, while validation IoU plateaued near 92%, demonstrating rapid feature learning followed by fine-tuning</li>
+            <li><strong>No Overfitting:</strong> The tight coupling between training and validation metrics throughout training confirms robust generalization within the source domain</li>
+        </ul>
+
+        <h4>Qualitative Results</h4>
+        <p>
+            Visual inspection of predictions reveals several strengths:
+        </p>
+        <ul>
+            <li>Sharp, accurate delineation of zebra stripe patterns</li>
+            <li>Robust performance on rainy images with wet road reflections</li>
+            <li>Successful detection in low-light nighttime conditions</li>
+            <li>Minimal false positives on road markings that aren't crosswalks</li>
+        </ul>
+
+        <h3>3.2 Cross-Domain Evaluation on CCTV</h3>
+
+        <p>
+            When the FPV-trained model was evaluated on the Naver CCTV evaluation set, performance degraded severely, revealing the significant domain gap:
+        </p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Result</th>
+                    <th>Interpretation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Mean Prediction Confidence</strong></td>
+                    <td>0.044</td>
+                    <td style="color: #e74c3c;">Extremely low confidence indicates the model barely recognizes CCTV crosswalks</td>
+                </tr>
+                <tr>
+                    <td><strong>Frames with Conf > 0.05</strong></td>
+                    <td>~14%</td>
+                    <td style="color: #e74c3c;">Only about 1 in 7 frames show even minimal crosswalk detection</td>
+                </tr>
+                <tr>
+                    <td><strong>Day vs Night Performance</strong></td>
+                    <td>Day frames performed marginally better</td>
+                    <td>Brightness and contrast play critical roles in cross-domain transfer</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="challenge-box">
+            <h4>Domain Shift Characteristics</h4>
+            <p><strong>Confidence Distribution:</strong> The distribution of prediction confidence across CCTV frames is heavily skewed toward zero (mean: 0.044), with approximately 140 out of 175 frames showing confidence below 0.05. This indicates the model essentially "fails to recognize" crosswalks in the overhead view.</p>
+            
+            <p><strong>Brightness Correlation:</strong> A scatter plot of confidence vs. frame brightness reveals a positive correlation, with daytime frames (brightness > 80) showing marginally better detection. However, even the best-performing frames achieve only modest confidence (~0.5), far below the threshold needed for reliable segmentation.</p>
+        </div>
+
+        <h4>Best vs Worst Case Examples</h4>
+        
+        <p><strong>Best Performance Example (Conf: 0.498):</strong></p>
+        <ul>
+            <li>Daytime scene with high brightness (110.7)</li>
+            <li>Clear, well-marked zebra crossing with high contrast</li>
+            <li>Model produces a partial heatmap overlapping the crosswalk region</li>
+            <li>Still significantly worse than typical FPV performance (IoU ~0.93)</li>
+        </ul>
+
+        <p><strong>Worst Performance Example (Conf: 0.001):</strong></p>
+        <ul>
+            <li>Nighttime scene with low brightness (58.4)</li>
+            <li>Model produces almost entirely black prediction mask</li>
+            <li>Complete failure to detect any crosswalk features</li>
+            <li>Represents the majority case (73.7% of evaluation frames are nighttime)</li>
+        </ul>
+
+        <h3>3.3 Domain Gap Analysis</h3>
+
+        <p>
+            Through systematic analysis, we identified three primary factors contributing to the FPV-to-CCTV domain gap:
+        </p>
+
+        <div class="challenge-box">
+            <h4>1. Viewpoint Shift</h4>
+            <p>
+                <strong>FPV Perspective:</strong> Crosswalks appear as horizontal zebra stripes spanning the image width, with parallel lines maintaining consistent spacing due to the forward-facing viewpoint.
+            </p>
+            <p>
+                <strong>CCTV Perspective:</strong> Overhead mounting (30-90° angle) causes crosswalks to appear compressed, trapezoidal, and foreshortened. The geometric transformation is substantial enough that features learned for FPV (e.g., "horizontal parallel lines") no longer apply.
+            </p>
+            <p>
+                <strong>Impact:</strong> The model's convolutional filters, optimized for horizontal stripe patterns, fail to recognize the same semantic content under perspective distortion.
+            </p>
+        </div>
+
+        <div class="challenge-box">
+            <h4>2. Scale & Distance Changes</h4>
+            <p>
+                <strong>FPV View:</strong> Crosswalks are captured at relatively close range, occupying a significant portion of the image with clear stripe detail.
+            </p>
+            <p>
+                <strong>CCTV View:</strong> The overhead vantage point places crosswalks farther from the camera, resulting in smaller pixel footprints and reduced detail in individual zebra stripes.
+            </p>
+            <p>
+                <strong>Impact:</strong> Fine-grained patterns that were discriminative in FPV become ambiguous at the reduced scale of CCTV imagery.
+            </p>
+        </div>
+
+        <div class="challenge-box">
+            <h4>3. Lighting & Contrast Variations</h4>
+            <p>
+                <strong>FPV Dataset:</strong> Balanced across lighting conditions (sunny, cloudy, rainy, night) with emphasis on forward-facing illumination.
+            </p>
+            <p>
+                <strong>CCTV Reality:</strong> Predominantly nighttime footage (73.7%) with lower overall contrast due to artificial street lighting and overhead angle.
+            </p>
+            <p>
+                <strong>Impact:</strong> The photometric distribution shift compounds the geometric challenges, as low-contrast CCTV images fall outside the brightness range well-represented in training data.
+            </p>
+        </div>
+
+        <div class="key-finding">
+            <strong>Fundamental Insight:</strong> The model learned "what a crosswalk looks like from car eye-level" rather than learning an abstract, viewpoint-invariant representation of "crosswalk-ness." This demonstrates that semantic segmentation models, despite their sophistication, remain sensitive to the geometric and photometric properties of their training distribution.
+        </div>
+
+        <h2>4. Implications & Next Steps</h2>
+
+        <h3>4.1 Validation of Research Approach</h3>
+
+        <p>
+            Stage 1 successfully validated our baseline approach and confirmed the necessity of domain adaptation:
+        </p>
+
+        <ul>
+            <li><strong>Technical Feasibility:</strong> Achieving 93% IoU on FPV data demonstrates that crosswalk segmentation is a solvable problem with modern deep learning architectures</li>
+            <li><strong>Domain Gap Quantification:</strong> The dramatic performance drop (93% → near-zero confidence) provides empirical evidence for the FPV-CCTV domain gap, justifying our multi-stage research design</li>
+            <li><strong>Architecture Validation:</strong> U-Net's strong performance within-domain confirms it as a suitable backbone for subsequent domain adaptation experiments</li>
+        </ul>
+
+        <h3>4.2 Stage 2: Geometric Self-Supervision</h3>
+
+        <div class="solution-box">
+            <h4>Approach</h4>
+            <p>
+                Stage 2 will address the domain gap through geometric self-supervision, leveraging the inherent structure of zebra crossings:
+            </p>
+            <ul>
+                <li><strong>Step 1:</strong> Apply Hough Transform to detect parallel zebra lines in CCTV images</li>
+                <li><strong>Step 2:</strong> Generate pseudo-labels from geometric line detection (no human annotation needed)</li>
+                <li><strong>Step 3:</strong> Fine-tune the FPV-trained model on CCTV images with pseudo-labels, teaching it to match the geometric structure</li>
+            </ul>
+            
+            <h4>Expected Outcome</h4>
+            <p>
+                <strong>Target Performance:</strong> CCTV IoU between 65-75%, representing a dramatic improvement over current near-zero performance while acknowledging that self-supervised pseudo-labels may contain some noise.
+            </p>
+            
+            <h4>Advantages</h4>
+            <ul>
+                <li>No manual labeling required for CCTV data</li>
+                <li>Leverages domain-specific prior knowledge (crosswalks have parallel lines)</li>
+                <li>Enables model to learn viewpoint-invariant geometric features</li>
+            </ul>
+        </div>
+
+        <h3>4.3 Stage 3: Targeted Fine-Tuning</h3>
+
+        <div class="solution-box">
+            <h4>Approach</h4>
+            <p>
+                After geometric self-supervision, we will perform targeted fine-tuning on the most challenging cases:
+            </p>
+            <ul>
+                <li><strong>Strategic Labeling:</strong> Manually label only 30-50 hard frames (nighttime, rainy conditions, unusual crosswalk patterns)</li>
+                <li><strong>Hard Example Mining:</strong> Focus annotation effort on failure cases identified during Stage 2 evaluation</li>
+                <li><strong>Final Polish:</strong> Supervised fine-tuning on these challenging examples to eliminate remaining error modes</li>
+            </ul>
+            
+            <h4>Expected Outcome</h4>
+            <p>
+                <strong>Target Performance:</strong> CCTV IoU > 80%, bringing performance close to the FPV baseline and meeting requirements for Phase 2 pedestrian tracking.
+            </p>
+            
+            <h4>Efficiency Rationale</h4>
+            <p>
+                By combining self-supervision (Stage 2) with minimal targeted labeling (Stage 3), we dramatically reduce annotation cost while achieving near-supervised performance. This approach is particularly valuable for smart city applications where labeled overhead traffic camera data is scarce.
+            </p>
+        </div>
+
+        <h3>4.4 Path to Phase 2 & 3</h3>
+
+        <p>
+            Upon successful completion of Phase 1 Stages 2-3, we will have established a robust crosswalk segmentation foundation:
+        </p>
+
+        <ul>
+            <li><strong>Phase 2 Enablement:</strong> Accurate CCTV crosswalk masks will define the region of interest for pedestrian tracking, enabling focus on relevant areas and filtering out background motion</li>
+            <li><strong>Behavior Analysis:</strong> With known crosswalk boundaries, we can track pedestrians' entry/exit times, walking speeds, and trajectories relative to the crossing zone</li>
+            <li><strong>Phase 3 Integration:</strong> Combining crosswalk detection (Phase 1) with pedestrian behavior analysis (Phase 2) will provide the inputs needed for adaptive signal control algorithms</li>
+        </ul>
+
+        <h2>5. Conclusion</h2>
+
+        <div class="conclusion">
+            <h2>Summary of Achievements</h2>
+            
+            <p>
+                Phase 1, Stage 1 of the Adaptive Crosswalk System project has successfully established a validated baseline for crosswalk segmentation and quantified the critical domain adaptation challenge. Our key accomplishments include:
+            </p>
+
+            <ul>
+                <li><strong>Strong Baseline Performance:</strong> Achieved 93.0% IoU on FPV crosswalk segmentation, demonstrating technical feasibility of deep learning-based crosswalk detection</li>
+                <li><strong>Comprehensive Dataset Construction:</strong> Assembled 3,300 labeled FPV training examples and 175 real-world CCTV evaluation frames from Korean intersections</li>
+                <li><strong>Domain Gap Quantification:</strong> Provided empirical evidence of the significant FPV-to-CCTV performance degradation, validating the need for domain adaptation</li>
+                <li><strong>Root Cause Analysis:</strong> Identified three primary factors (viewpoint shift, scale changes, lighting variations) contributing to cross-domain failure</li>
+                <li><strong>Clear Path Forward:</strong> Designed a two-stage solution (geometric self-supervision + targeted fine-tuning) to bridge the domain gap</li>
+            </ul>
+
+            <h3>Research Impact</h3>
+            
+            <p>
+                This work contributes to the broader field of computer vision for smart city applications by:
+            </p>
+            
+            <ul>
+                <li>Demonstrating that domain-specific prior knowledge (parallel line geometry) can reduce reliance on expensive manual labeling</li>
+                <li>Providing a reproducible methodology for adapting street-view models to overhead traffic camera perspectives</li>
+                <li>Establishing baseline metrics for crosswalk segmentation performance in challenging real-world CCTV conditions</li>
+            </ul>
+
+            <h3>Next Milestone</h3>
+            
+            <p>
+                <strong>Immediate Priority:</strong> Implementation and evaluation of geometric self-supervision (Stage 2), targeting 65-75% IoU on CCTV data through Hough Transform-based pseudo-labeling. Success at this stage will confirm the viability of our domain adaptation strategy and set the stage for Phase 2's pedestrian behavior analysis.
+            </p>
+        </div>
+
+        <div style="margin-top: 50px; padding-top: 30px; border-top: 2px solid #ecf0f1; text-align: center; color: #7f8c8d;">
+            <p><em>End of Phase 1, Stage 1 Research Report</em></p>
+            <p style="font-size: 0.9em;">Adaptive Crosswalk System | Computer Vision & Smart City Applications</p>
+        </div>
+    </div>
+</body>
+</html>
