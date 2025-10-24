@@ -1,0 +1,23 @@
+{
+  "dataset": "AI Hub CCTV",
+  "num_images": 5926,
+  "statistics": {
+    "mean_confidence": 0.05450808961920802,
+    "median_confidence": 0.04923467896878719,
+    "max_confidence": 0.24917902052402496,
+    "min_confidence": 0.0005534781375899911,
+    "std_confidence": 0.044453053017047425
+  },
+  "comparison": {
+    "old_cctv_confidence": 0.044,
+    "improvement_percent": 23.88202186183642
+  },
+  "distribution": {
+    "0-5%": 3004,
+    "5-10%": 2121,
+    "10-20%": 718,
+    "20-30%": 83,
+    "30-50%": 0,
+    "50-100%": 0
+  }
+}
