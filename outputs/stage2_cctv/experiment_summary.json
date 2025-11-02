@@ -1,0 +1,31 @@
+{
+  "experiment": "CCTV Crosswalk Detection - Stage 2",
+  "date": "2025-11-02 13:36:43.377967",
+  "phase_1": {
+    "labeled_samples": 241,
+    "train_samples": 201,
+    "val_samples": 40,
+    "epochs": 30,
+    "best_val_iou": 0.889145827293396,
+    "final_train_iou": 0.9701655983924866,
+    "final_val_iou": 0.8856787562370301
+  },
+  "pseudo_labeling": {
+    "total_unlabeled": 5926,
+    "generated_pseudo_labels": 5926,
+    "high_confidence_labels": 1000,
+    "confidence_threshold": 0.7,
+    "top_score": 0.9888426661491394,
+    "median_score": 0.9882186651229858
+  },
+  "realtime_performance": {
+    "inference_time_ms": 12.981669902801514,
+    "fps": 77.03169218500885,
+    "realtime_capable": true
+  },
+  "paths": {
+    "best_model": "/data/omar/RESEARCH/crosswalk-cctv/outputs/stage2_cctv/best_model_cctv.pth",
+    "pseudo_labels": "/data/omar/RESEARCH/crosswalk-cctv/outputs/stage2_cctv/pseudo_labels/iteration_1",
+    "training_history": "/data/omar/RESEARCH/crosswalk-cctv/outputs/stage2_cctv/training_history.json"
+  }
+}
